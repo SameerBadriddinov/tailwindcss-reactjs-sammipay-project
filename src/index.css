@@ -1,13 +1,102 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --black-gradient: linear-gradient(144.39deg, #fff -278.56%, #6d6d6d -78.47%, #11101d 91.61%);
+    --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    scroll-behavior: smooth;
+}
+
+.navlink {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.navlink.active {
+    color: white;
+}
+
+.sidebar {
+    animation: slide-sidebar .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-sidebar {
+    0% {
+        transform: translateY(100px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.bg-black-gradient {
+    background: linear-gradient(to top, #fff -270%, #6d6d6d -78%, #11101d 100%);
+}
+
+.bg-discount-gradient {
+    background: linear-gradient(130deg, #272727 0%, #11101d 100%);
+}
+
+.text-gradient {
+    background: radial-gradient(64.18% 64.18% at 71.16% 35.68%,
+            #def9fa 0.89%,
+            #bef3f5 17.23%,
+            #9dedf0 42.4%,
+            #7de7eb 55.12%,
+            #5ce1e6 71.54%,
+            #33bbcf 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blue__gradient {
+    background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214df6 100%);
+    filter: blur(123px);
+}
+
+.pink__gradient {
+    background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+    filter: blur(900px);
+}
+
+.white__gradient {
+    background: rgba(255, 255, 255, 0.6);
+    filter: blur(750px);
+}
+
+.bg-blue-gradient {
+    background: linear-gradient(157.81deg,
+            #def9fa -43.27%,
+            #bef3f5 -21.24%,
+            #9dedf0 12.19%,
+            #7de7eb 29.82%,
+            #5ce1e6 51.94%,
+            #33bbcf 90.29%);
+}
+
+.feature-card {
+    transition: all .3s ease;
+}
+
+.feature-card:hover,
+.feedback-card:hover {
+    background: var(--black-gradient);
+    box-shadow: var(--card-shadow);
+}
+
+.icons {
+    color: rgb(74, 193, 248);
+}
+
+.box-shadow {
+    box-shadow: var(--card-shadow);
+}
+
+.bg-dark-gradient {
+    background: var(--black-gradient);
 }
